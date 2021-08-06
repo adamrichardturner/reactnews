@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ImgMediaCard() {
+function NewsCard() {
   const classes = useStyles();
 
   return (
@@ -42,9 +42,11 @@ export default function ImgMediaCard() {
           Share
         </Button>
         <Button size="small" color="primary">
-          Learn More
+          Read More
         </Button>
       </CardActions>
     </Card>
   );
 }
+
+export default NewsCard
