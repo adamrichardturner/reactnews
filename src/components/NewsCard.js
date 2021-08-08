@@ -16,16 +16,15 @@ const useStyles = makeStyles({
 
 function NewsCard(props) {
   const classes = useStyles();
-
   return (
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="Contemplative Reptile"
+          alt={props.title}
           height="140"
           image={props.urlToImage}
-          title="Contemplative Reptile"
+          title={props.title}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">

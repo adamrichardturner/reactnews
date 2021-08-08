@@ -7,38 +7,41 @@ import React, { useEffect, useState } from 'react';
 
 function App() {
 
-  const [ appState, setAppState ] = useState({
-    loading: false,
-    articles: []
+  const [ state, setState ] = useState({
+    loading: true,
+    articles: {}
   })
 
   useEffect(() => {
-    setAppState({ loading: true });
-    const key = process.env.REACT_APP_NEWSAPI_KEY
-    const url = `https://newsapi.org/v2/top-headlines?country=gb&apiKey=${key}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((articles) => {
-        setAppState({ loading: false, articles: articles.articles });
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-      .finally(() => {
-        setAppState({ loading: true });
-      });
-  }, [setAppState]);
+    fetchNews()
+  }, [] )
 
-  const displayNews = () => {
-    const articles = appState.articles
-    console.log(typeof articles)
+  const fetchNews = async () => {
+    const key = process.env.REACT_APP_NEWSAPI_KEY
+    const url = `https://newsapi.org/v2/top-headlines?country=gb&apiKey=${key}`
+    const response = await fetch(url)
+    const data = await response.json()
+    setState({
+      articles: data.articles
+    })
   }
 
   return (
     <div className="App">
       <Container maxWidth="lg" className="Container">
         <Layout />
-        {displayNews()}
+        {
+          Object.keys(state.articles).map(function(article) {
+            console.log(state.articles[article].urlToImage)
+            return <div className="newsCard">
+                      <NewsCard 
+                        title={state.articles[article].title} 
+                        description={state.articles[article].description}  
+                        image={state.articles[article].urlToImage}  
+                      />
+                   </div>
+          })
+        }
       </Container>
     </div>
   );
