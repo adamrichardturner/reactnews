@@ -9,7 +9,7 @@ import loading from './Rocket.gif'
 
 function App() {
 
-  const key = process.env.REACT_APP_NEWSAPI_KEY
+  const key = "4e0068669dcd4f46809b33ea160a0948"
 
   const [ state, setState ] = useState({
     loading: true,
