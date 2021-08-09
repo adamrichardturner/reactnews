@@ -23,7 +23,7 @@ function NewsCard(props) {
           component="img"
           alt={props.title}
           height="140"
-          image={props.urlToImage}
+          image={props.image}
           title={props.title}
         />
         <CardContent>

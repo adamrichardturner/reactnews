@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Layout() {
+export default function Layout({updatePage}) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -88,6 +88,10 @@ export default function Layout() {
     right: false,
   });
 
+  const handleClick = (event) => {
+    updatePage(event.target.innerHTML.toLowerCase())
+  }
+
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
@@ -95,6 +99,7 @@ export default function Layout() {
 
     setState({ ...state, [anchor]: open });
   };
+
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -106,8 +111,8 @@ export default function Layout() {
     >
       <List>
         <p style={{marginLeft: "15px"}}>ReactNews</p>
-        {['Featured', 'General', 'Entertainment', 'Health', 'Science', 'Sports', 'Tech'].map((text, index) => (
-          <ListItem button key={text}>
+        {['General', 'Entertainment', 'Health', 'Science', 'Sports', 'Technology'].map((text, index) => (
+          <ListItem button key={text} onClick={handleClick}>
             {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
             <ListItemText primary={text} />
           </ListItem>

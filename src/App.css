@@ -29,6 +29,7 @@
 }
 
 .Container {
+  margin: 50px;
   margin-top: 64px;
   height: 100vh;
 }
@@ -40,20 +41,26 @@
   display: none;
 }
 
+.ParentLoader {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .newsCard {
-  width: 20%;
-  height: auto;
+  height: 25vh;
   width: auto;
   margin: 20px;
   display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.newsCard h2 {
+  font-size: 12px;
 }
