@@ -14,6 +14,10 @@ const useStyles = makeStyles({
   },
 });
 
+const truncate = (str) => {
+  return str.length > 80 ? str.substr(0, 80 - 1) + "..." : str
+}
+
 function NewsCard(props) {
   const classes = useStyles();
   return (
@@ -31,7 +35,7 @@ function NewsCard(props) {
             {props.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {props.description}
+            {truncate(props.description)}
           </Typography>
         </CardContent>
       </CardActionArea>

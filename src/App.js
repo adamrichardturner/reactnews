@@ -9,24 +9,28 @@ import loading from './Rocket.gif'
 
 function App() {
 
-  const key = "4e0068669dcd4f46809b33ea160a0948"
-
   const [ state, setState ] = useState({
     loading: true,
     articles: {}
   })
 
-  const [ currentPage, setCurrentPage ] = useState("general")
+  const [ currentPage, setCurrentPage ] = useState("breaking-news")
+  
+  const key = process.env.REACT_APP_NEWSAPI_KEY
 
-  const [ url, setUrl ] = useState(`https://newsapi.org/v2/top-headlines?country=gb&apiKey=${key}&category=${currentPage}`)
+  const endpoint = `top-headlines`
+
+  const [ url, setUrl ] = useState(`https://gnews.io/api/v4/${endpoint}?token=${key}&country=gb`)
 
   useEffect(() => {
     fetchNews()
   }, [url] )
 
   const fetchNews = async () => {
+    console.log(url)
     const response = await fetch(url)
     const data = await response.json()
+    console.log(data)
     setState({
       articles: data.articles
     })
@@ -34,10 +38,7 @@ function App() {
 
   const updatePage = title => {
     setCurrentPage(title)
-    setUrl(`https://newsapi.org/v2/top-headlines?country=gb&apiKey=${key}&category=${title}`)
-    console.log(`URL before: ${url}`)
-    fetchNews()
-    console.log(`URL after: ${url}`)
+    setUrl(`https://gnews.io/api/v4/${endpoint}?token=${key}&country=gb&topic=${title}`)
   }
 
   return (
@@ -60,9 +61,9 @@ function App() {
                         description={state.articles[article].description}  
                         image=
                         {
-                          state.articles[article].urlToImage !== null 
+                          state.articles[article].image !== null 
                           ? 
-                          state.articles[article].urlToImage 
+                          state.articles[article].image 
                           : placeholder
                         }  
                       />

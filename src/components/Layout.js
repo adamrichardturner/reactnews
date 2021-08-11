@@ -111,7 +111,7 @@ export default function Layout({updatePage}) {
     >
       <List>
         <p style={{marginLeft: "15px"}}>ReactNews</p>
-        {['General', 'Entertainment', 'Health', 'Science', 'Sports', 'Technology'].map((text, index) => (
+        {['World', 'Nation', 'Business', 'Technology', 'Entertainment', 'Sports', 'Science', 'Health'].map((text, index) => (
           <ListItem button key={text} onClick={handleClick}>
             {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
             <ListItemText primary={text} />
@@ -166,40 +166,3 @@ export default function Layout({updatePage}) {
     </div>
   );
 }
-
-// export default function Layout() {
-//   const classes = useStyles();
-
-//   return (
-//     <div className={classes.root}>
-//       <AppBar position="fixed">
-//         <Toolbar>
-//           <IconButton
-//             edge="start"
-//             className={classes.menuButton}
-//             color="inherit"
-//             aria-label="open drawer"
-//           >
-//             <MenuIcon />
-//           </IconButton>
-//           <Typography className={classes.title} variant="h6" noWrap>
-//             ReactNews
-//           </Typography>
-//           <div className={classes.search}>
-//             <div className={classes.searchIcon}>
-//               <SearchIcon />
-//             </div>
-//             <InputBase
-//               placeholder="Search…"
-//               classes={{
-//                 root: classes.inputRoot,
-//                 input: classes.inputInput,
-//               }}
-//               inputProps={{ 'aria-label': 'search' }}
-//             />
-//           </div>
-//         </Toolbar>
-//       </AppBar>
-//     </div>
-//   );
-// }
