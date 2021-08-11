@@ -41,10 +41,14 @@ function App() {
     setUrl(`https://gnews.io/api/v4/${endpoint}?token=${key}&country=gb&topic=${title}`)
   }
 
+  const searchPage = term => {
+    setUrl(`https://gnews.io/api/v4/search?q=${term}&token=${key}`)
+  }
+
   return (
     <div className="App">
       <Container maxWidth="lg" className="Container">
-        <Layout updatePage={updatePage} />
+        <Layout updatePage={updatePage} searchPage={searchPage}/>
         {
           state.loading === true ? <div className="ParentLoader">
             <img className="Loader" src={loading} alt="Loading" />

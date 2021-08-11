@@ -21,6 +21,7 @@ const truncate = (str) => {
 function NewsCard(props) {
   const classes = useStyles();
   return (
+    <>
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
@@ -48,6 +49,7 @@ function NewsCard(props) {
         </Button>
       </CardActions>
     </Card>
+    </>
   );
 }
 

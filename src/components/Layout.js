@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Layout({updatePage}) {
+export default function Layout({updatePage, searchPage}) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,
@@ -90,6 +90,10 @@ export default function Layout({updatePage}) {
 
   const handleClick = (event) => {
     updatePage(event.target.innerHTML.toLowerCase())
+  }
+
+  const handleChange = (event) => {
+    searchPage(event.target.value.toLowerCase())
   }
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -145,6 +149,7 @@ export default function Layout({updatePage}) {
               <SearchIcon />
             </div>
             <InputBase
+              onChange={handleChange}
               placeholder="Search…"
               classes={{
                 root: classes.inputRoot,
