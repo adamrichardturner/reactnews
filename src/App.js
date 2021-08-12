@@ -3,6 +3,7 @@ import './App.css';
 import Container from '@material-ui/core/Container';
 import Layout from './components/Layout'
 import NewsCard from './components/NewsCard'
+import SimpleModal from './components/SimpleModal'
 import React, { useEffect, useState } from 'react';
 import placeholder from './reactnews-placeholder.jpg'
 import loading from './Rocket.gif'
@@ -45,10 +46,29 @@ function App() {
     setUrl(`https://gnews.io/api/v4/search?q=${term}&token=${key}`)
   }
 
+  const [ modalOpen, setModalOpen ] = useState(false)
+
+  const [ selectedArticle, setSelectedArticle ] = useState(0)
+
+  const openModal = () => {
+    setSelectedArticle()
+    setModalOpen(true)
+  }
+
+  const closeModal = () => {
+    setModalOpen(false)
+  }
+
   return (
     <div className="App">
       <Container maxWidth="lg" className="Container">
-        <Layout updatePage={updatePage} searchPage={searchPage}/>
+        <Layout updatePage={updatePage} 
+                searchPage={searchPage}
+                openModal={openModal}
+        />
+        <SimpleModal display={modalOpen} 
+                     closeModal={closeModal}
+                     />
         {
           state.loading === true ? <div className="ParentLoader">
             <img className="Loader" src={loading} alt="Loading" />
@@ -62,7 +82,8 @@ function App() {
                     <NewsCard 
                         key={state.articles[article].title}
                         title={state.articles[article].title} 
-                        description={state.articles[article].description}  
+                        description={state.articles[article].description}
+                        openModal={openModal}  
                         image=
                         {
                           state.articles[article].image !== null 

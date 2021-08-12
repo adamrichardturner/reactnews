@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -18,25 +19,28 @@ const truncate = (str) => {
   return str.length > 80 ? str.substr(0, 80 - 1) + "..." : str
 }
 
-function NewsCard(props) {
+function NewsCard({title, image, description, openModal}) {
   const classes = useStyles();
+  const handleClick = () => {
+    openModal()
+  }
   return (
     <>
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           component="img"
-          alt={props.title}
+          alt={title}
           height="140"
-          image={props.image}
-          title={props.title}
+          image={image}
+          title={title}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {props.title}
+            {title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {truncate(props.description)}
+            {truncate(description)}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -44,7 +48,10 @@ function NewsCard(props) {
         <Button size="small" color="primary">
           Share
         </Button>
-        <Button size="small" color="primary">
+        <Button size="small" 
+                color="primary"
+                onClick={handleClick}
+                >
           Read More
         </Button>
       </CardActions>
