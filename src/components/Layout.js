@@ -117,7 +117,6 @@ export default function Layout({updatePage, searchPage}) {
         <p style={{marginLeft: "15px"}}>ReactNews</p>
         {['World', 'Nation', 'Business', 'Technology', 'Entertainment', 'Sports', 'Science', 'Health'].map((text, index) => (
           <ListItem button key={text} onClick={handleClick}>
-            {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
             <ListItemText primary={text} />
           </ListItem>
         ))}
@@ -144,7 +143,7 @@ export default function Layout({updatePage, searchPage}) {
           <Typography className={classes.title} variant="h6" noWrap>
             ReactNews
           </Typography>
-          <div className={classes.search}>
+          {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
@@ -157,7 +156,7 @@ export default function Layout({updatePage, searchPage}) {
               }}
               inputProps={{ 'aria-label': 'search' }}
             />
-          </div>
+          </div> */}
         </Toolbar>
       </AppBar>
       {['left', 'right', 'top', 'bottom'].map((anchor) => (
