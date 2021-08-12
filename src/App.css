@@ -62,3 +62,9 @@
 #root>last-child {
   text-align: left;
 }
+
+@media only screen and (max-width: 767px) {
+  div.makeStyles-paper-10 {
+    width: 100vw;
+  }
+}
