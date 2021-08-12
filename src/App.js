@@ -48,11 +48,18 @@ function App() {
 
   const [ modalOpen, setModalOpen ] = useState(false)
 
-  const [ selectedArticle, setSelectedArticle ] = useState(0)
+  const [ title, setTitle ] = useState("")
+  const [ content, setContent ] = useState("")
+  const [ image, setImage ] = useState("")
+  const [ sourceURL, setSourceURL ] = useState("")
 
-  const openModal = () => {
-    setSelectedArticle()
+  const openModal = (title, content, image, sourceURL) => {
+    setTitle(title)
+    setContent(content)
+    setImage(image)
+    setSourceURL(sourceURL)
     setModalOpen(true)
+    console.log(`Source URL IS!!! ${sourceURL}`)
   }
 
   const closeModal = () => {
@@ -68,6 +75,10 @@ function App() {
         />
         <SimpleModal display={modalOpen} 
                      closeModal={closeModal}
+                     title={title}
+                     content={content}
+                     image={image}
+                     source={sourceURL}
                      />
         {
           state.loading === true ? <div className="ParentLoader">
@@ -83,6 +94,8 @@ function App() {
                         key={state.articles[article].title}
                         title={state.articles[article].title} 
                         description={state.articles[article].description}
+                        content={state.articles[article].content}
+                        source={state.articles[article].url}
                         openModal={openModal}  
                         image=
                         {

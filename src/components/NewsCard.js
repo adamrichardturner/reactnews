@@ -19,10 +19,11 @@ const truncate = (str) => {
   return str.length > 80 ? str.substr(0, 80 - 1) + "..." : str
 }
 
-function NewsCard({title, image, description, openModal}) {
+function NewsCard({title, image, description, content, source, openModal}) {
   const classes = useStyles();
+
   const handleClick = () => {
-    openModal()
+    openModal(title, content, image, source)
   }
   return (
     <>
@@ -34,8 +35,9 @@ function NewsCard({title, image, description, openModal}) {
           height="140"
           image={image}
           title={title}
+          onClick={handleClick}
         />
-        <CardContent>
+        <CardContent onClick={handleClick}>
           <Typography gutterBottom variant="h5" component="h2">
             {title}
           </Typography>
