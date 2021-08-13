@@ -26,7 +26,7 @@
 .Container {
   margin: 50px;
   margin-top: 64px;
-  height: 100vh;
+  height: auto;
   margin-bottom: 50px;
 }
 
@@ -94,7 +94,9 @@ svg {
 @media only screen and (max-width: 767px) {
   div.makeStyles-paper-10 {
     padding: 15px;
-    width: 100vw;
+    width: 70vw;
+    overflow-y: scroll;
+    margin: 0px;
   }
 
   div.makeStyles-paper-10 img {
