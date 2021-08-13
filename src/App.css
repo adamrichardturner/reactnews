@@ -95,7 +95,8 @@ svg {
   div.makeStyles-paper-10 {
     padding: 15px;
     width: 70vw;
-    overflow-y: scroll;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     margin: 0px;
   }
 
