@@ -17,6 +17,7 @@ function getModalStyle() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
+    margin: '25px',
     textAlign: 'center',
     position: 'absolute',
     width: 'auto',
