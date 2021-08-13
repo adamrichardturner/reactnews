@@ -12,7 +12,8 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-    minHeight: 360
+    minHeight: 360,
+    maxHeight: 360
   },
 });
 
@@ -48,9 +49,9 @@ function NewsCard({title, image, description, content, source, openModal}) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        {/* <Button size="small" color="primary">
           Share
-        </Button>
+        </Button> */}
         <Button size="small" 
                 color="primary"
                 onClick={handleClick}

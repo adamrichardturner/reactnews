@@ -27,6 +27,7 @@
   margin: 50px;
   margin-top: 64px;
   height: 100vh;
+  margin-bottom: 50px;
 }
 
 #root>div>div>div:nth-child(1)>button:nth-child(2),
@@ -49,6 +50,15 @@
   justify-content: center;
 }
 
+div.MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.MuiPaper-elevation16 p {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.card {
+  margin: 15px 0px;
+}
+
 .newsCard {
   height: 25vh;
   margin: 20px;
@@ -60,12 +70,25 @@
   font-weight: 600;
 }
 
+.div:last-child {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+}
+
 #root>last-child {
   text-align: left;
 }
 
 svg {
   cursor: pointer;
+}
+
+.MuiCardActions-root {
+  justify-content: center;
+}
+
+.MuiButtonBase-root {
+  border: 1px solid black;
 }
 
 @media only screen and (max-width: 767px) {
