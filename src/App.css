@@ -93,6 +93,7 @@ svg {
 
 @media only screen and (max-width: 767px) {
   div.makeStyles-paper-10 {
+    height: 65vh;
     padding: 15px;
     width: 70vw;
     overflow: scroll;
