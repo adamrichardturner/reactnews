@@ -5,8 +5,8 @@ import Layout from './components/Layout'
 import NewsCard from './components/NewsCard'
 import SimpleModal from './components/SimpleModal'
 import React, { useEffect, useState } from 'react';
-import placeholder from './reactnews-placeholder.jpg'
-import loading from './Rocket.gif'
+import Placeholder from './reactnews-placeholder.jpg'
+import Loading from './Rocket.gif'
 
 function App() {
   // Initialise state and state setter for articles
@@ -60,7 +60,7 @@ function App() {
   const [ image, setImage ] = useState("")
   const [ sourceURL, setSourceURL ] = useState("")
 
-  // On opening the modal set the title, content, imageg, sourceURL and
+  // On opening the modal set the title, content, image, sourceURL and
   // status of modal.
 
   const openModal = (title, content, image, sourceURL) => {
@@ -92,14 +92,17 @@ function App() {
                      />
         {
           // Conditional renedering of loading gif
+
           state.loading === true ? <div className="ParentLoader">
-            <img className="Loader" src={loading} alt="Loading" />
+            <img className="Loader" src={Loading} alt="Loading" />
           </div>
           
           :
+
           // Iterate over the returned object from the fetch API call
           // and returns a NewsCard for each article, dependant on the
           // arguments given by user clicking on the AppDrawer anchors
+
           Object.keys(state.articles).map(function(article) {
             return <div className="newsCard">
                     <div className="card">
@@ -115,11 +118,10 @@ function App() {
                           state.articles[article].image !== null 
                           ? 
                           state.articles[article].image 
-                          : placeholder
+                          : Placeholder
                         }  
                       />
                     </div>
-                      
                    </div>
           })
         }

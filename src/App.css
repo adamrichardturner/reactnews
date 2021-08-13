@@ -56,15 +56,26 @@
 }
 
 .newsCard h2 {
-  font-size: 12px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 #root>last-child {
   text-align: left;
 }
 
+svg {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 767px) {
   div.makeStyles-paper-10 {
+    padding: 15px;
     width: 100vw;
+  }
+
+  div.makeStyles-paper-10 img {
+    width: 100%;
+    height: auto;
   }
 }

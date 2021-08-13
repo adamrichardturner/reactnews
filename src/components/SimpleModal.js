@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
+import CloseIcon from '@material-ui/icons/Close';
 
 function getModalStyle() {
   const top = 50;
@@ -30,6 +31,16 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     background: 'D3D3'
+  },
+  closeParent: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    textAlign: 'right',
+    marginBottom: '10px'
+  },
+  close: {
+    textAlign: 'right',
+    display: 'block'
   }
 }));
 
@@ -48,6 +59,9 @@ export default function SimpleModal({ display, closeModal, title, content, image
 
   const body = (
     <div style={modalStyle} className={classes.paper}>
+      <div className={classes.closeParent} >
+        <CloseIcon onClick={handleClose} className={classes.close} />
+      </div>
       <img src={image} alt={title} className={classes.image} />
       <h2 id="simple-modal-title">{title}</h2>
       <p id="simple-modal-description">
