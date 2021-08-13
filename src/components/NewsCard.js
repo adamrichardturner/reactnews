@@ -13,7 +13,9 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 345,
     minHeight: 360,
-    maxHeight: 360
+    maxHeight: 360,
+    marginTop: '15px',
+    marginBottom: '15px'
   },
 });
 
