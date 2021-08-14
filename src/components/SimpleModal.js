@@ -80,7 +80,7 @@ export default function SimpleModal({ display, closeModal, title, content, image
   );
 
   return (
-    <div>
+    <div className="modalCard">
       <Modal
         open={display}
         onClose={handleClose}
