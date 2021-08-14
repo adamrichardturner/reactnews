@@ -27,7 +27,7 @@ function NewsCard({title, image, description, content, source, openModal}) {
   const classes = useStyles();
 
   const handleClick = () => {
-    window.open(source)
+    openModal(title, content, image, source)
   }
   return (
     <>
@@ -51,9 +51,6 @@ function NewsCard({title, image, description, content, source, openModal}) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        {/* <Button size="small" color="primary">
-          Share
-        </Button> */}
         <Button size="small" 
                 color="primary"
                 onClick={handleClick}
