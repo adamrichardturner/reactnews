@@ -27,7 +27,7 @@ function NewsCard({title, image, description, content, source, openModal}) {
   const classes = useStyles();
 
   const handleClick = () => {
-    openModal(title, content, image, source)
+    window.open(source)
   }
   return (
     <>
