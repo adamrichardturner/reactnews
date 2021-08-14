@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 import CloseIcon from '@material-ui/icons/Close';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 function getModalStyle() {
   const top = 50;
@@ -18,13 +17,12 @@ function getModalStyle() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    minWidth: '65%',
-    minHeight: '65%',
+    minWidth: '240px',
     height: 'auto',
     overFlowY: 'scroll',
     textAlign: 'center',
     position: 'absolute',
-    width: 'auto',
+    width: '80%',
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
@@ -54,8 +52,6 @@ export default function SimpleModal({ display, closeModal, title, content, image
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
 
-  const paperStyle = useMediaQuery('(min-width: 240px)')
-
   const handleClose = () => {
     closeModal()
   };
@@ -80,7 +76,7 @@ export default function SimpleModal({ display, closeModal, title, content, image
   );
 
   return (
-    <div className="modalCard">
+    <div>
       <Modal
         open={display}
         onClose={handleClose}
