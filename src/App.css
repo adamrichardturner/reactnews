@@ -24,8 +24,9 @@
 }
 
 .Container {
+  display: inline-block !important;
   margin: 50px;
-  margin-top: 64px;
+  margin-top: 90px;
   height: auto;
   margin-bottom: 50px;
 }
@@ -93,12 +94,13 @@ svg {
 
 @media only screen and (max-width: 767px) {
   div.makeStyles-paper-10 {
-    height: 65vh;
+    height: 65%;
     padding: 15px;
-    width: 70vw;
+    width: 70%;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     margin: 0px;
+    bottom: 15px;
   }
 
   div.makeStyles-paper-10 img {
