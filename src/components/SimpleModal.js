@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     overflow: 'scroll',
     msOverflowY: 'touch',
     textAlign: 'center',
-    position: 'absolute',
+    position: 'fixed',
     width: '80%',
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
