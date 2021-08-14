@@ -18,12 +18,12 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     minWidth: '240px',
-    height: '50%',
+    height: 'auto',
     overflow: 'scroll',
     msOverflowY: 'touch',
     textAlign: 'center',
     position: 'fixed',
-    width: '80%',
+    width: '40%',
     backgroundColor: theme.palette.background.paper,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
   },
   image: {
     height: '240px',
-    width: 'auto'
+    width: '240px'
   },
   button: {
     background: '#D3D3D3'
@@ -66,7 +66,7 @@ export default function SimpleModal({ display, closeModal, title, content, image
       <div className={classes.closeParent} >
         <CloseIcon onClick={handleClose} className={classes.close} />
       </div>
-      <img src={image} alt={title} className={classes.image} />
+      {/* <img src={image} alt={title} className={classes.image} /> */}
       <h2 id="simple-modal-title">{title}</h2>
       <p id="simple-modal-description">
         {content}
