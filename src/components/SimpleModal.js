@@ -17,9 +17,9 @@ function getModalStyle() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
+    minWidth: '240px',
     height: 'auto',
-    overFlowY: 'auto',
-    margin: '25px',
+    overFlowY: 'scroll',
     textAlign: 'center',
     position: 'absolute',
     width: 'auto',
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     width: 'auto'
   },
   button: {
-    background: 'D3D3'
+    background: '#D3D3D3'
   },
   closeParent: {
     display: 'flex',
