@@ -2,12 +2,6 @@
   text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,7 +22,6 @@
 }
 
 .Container {
-  float: left;
   margin: 50px;
   margin-top: 90px;
   height: auto;
@@ -101,7 +94,7 @@ svg {
     margin: 0px;
     height: 65%;
     padding: 15px;
-    width: 70%;
+    width: 230px;
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     bottom: 15px;
