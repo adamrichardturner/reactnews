@@ -23,6 +23,10 @@
   color: #61dafb;
 }
 
+.spacer {
+  margin: 15px 0px;
+}
+
 .Container {
   float: left;
   margin: 50px;

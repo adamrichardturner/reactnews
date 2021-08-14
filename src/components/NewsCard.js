@@ -62,6 +62,9 @@ function NewsCard({title, image, description, content, source, openModal}) {
         </Button>
       </CardActions>
     </Card>
+    <div className="spacer">
+      &nbsp;
+    </div>
     </>
   );
 }
