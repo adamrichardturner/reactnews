@@ -19,7 +19,8 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     minWidth: '240px',
     height: 'auto',
-    overFlowY: 'scroll',
+    overflow: 'scroll',
+    msOverflowY: 'touch',
     textAlign: 'center',
     position: 'absolute',
     width: '80%',
