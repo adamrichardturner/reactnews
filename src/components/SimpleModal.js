@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 import CloseIcon from '@material-ui/icons/Close';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 function getModalStyle() {
   const top = 50;
@@ -17,7 +18,8 @@ function getModalStyle() {
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    minWidth: '240px',
+    minWidth: '65%',
+    minHeight: '65%',
     height: 'auto',
     overFlowY: 'scroll',
     textAlign: 'center',
@@ -51,6 +53,8 @@ export default function SimpleModal({ display, closeModal, title, content, image
   const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
   const [modalStyle] = React.useState(getModalStyle);
+
+  const paperStyle = useMediaQuery('(min-width: 240px)')
 
   const handleClose = () => {
     closeModal()
