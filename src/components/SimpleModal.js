@@ -18,7 +18,7 @@ function getModalStyle() {
 const useStyles = makeStyles((theme) => ({
   paper: {
     minWidth: '240px',
-    height: 'auto',
+    height: '50%',
     overflow: 'scroll',
     msOverflowY: 'touch',
     textAlign: 'center',
