@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 600,
     display: 'none',
     [theme.breakpoints.up('xs')]: {
-      display: 'block',
+      display: 'flex',
     },
   },
   search: {
