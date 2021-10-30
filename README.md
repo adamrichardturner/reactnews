@@ -7,7 +7,7 @@ by MaterialUI components which have been altered.
 
 To view a live demo of the project, hosted on GitHub, follow this URL:
 
-https://adamrichardturner.dev/reactnews
+https://adamrichardturner.github.io/reactnews/
 
 ## Getting Started
 
