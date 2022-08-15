@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const World: NextPage = () => {
+const Technology: NextPage = () => {
   return (
     <div>
       <Head>
@@ -13,10 +13,10 @@ const World: NextPage = () => {
       </Head>
 
       <main>
-          <h2>Hello World News!</h2>
+          <h2>Hi Technology</h2>
       </main>
     </div>
   )
 }
 
-export default World
+export default Technology

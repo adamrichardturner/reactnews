@@ -19,8 +19,11 @@ main {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 50.8px;
   height: auto;
+}
+
+.active {
+  color: #0070f3;
 }
 
 @media (prefers-color-scheme: dark) {

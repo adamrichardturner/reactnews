@@ -15,13 +15,15 @@ const Home: NextPage = () => {
 
       <main className={styles.container__main}>
         <section className={styles.container__main__landing}>
-          <h2 className={styles.container__main__landing__title}>
-            All the headlines you need...
-          </h2>
+          <div className={styles.container__main__landing__headline}>
+            <h2 className={styles.container__main__landing__headline__title}>
+              All the headlines you need...
+            </h2>
+          </div>
         </section>
         <section className={styles.container__main__info}>
           <h2 className={styles.container__main__info__title}>
-            Sourced from countless news outlets...
+            Sourced from over 60,000 news outlets...
           </h2>
           <Link href="/world">
             <button className={styles.container__main__info__button}>Get Started</button>
