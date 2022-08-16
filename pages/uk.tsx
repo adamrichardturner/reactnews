@@ -2,8 +2,21 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useArticles } from '../context/ArticlesContext'
+import { useEffect } from 'react'
+import NewsAPI from '../utils/NewsAPI'
 
 const UK: NextPage = () => {
+  const { articles, updateArticles } = useArticles();
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      const fetchedArticles = await NewsAPI.getUKNews();
+      updateArticles(fetchedArticles);
+      console.log(articles);
+    }
+    fetchArticles();
+  }, [])
   return (
     <div>
       <Head>
