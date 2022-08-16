@@ -1,0 +1,12 @@
+.newsContainer {
+    display: block;
+    &__heroContainer {
+        display: block;
+    }
+    &__newsGrid {
+        display: grid;
+        padding: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+        grid-gap: 5px;
+    }
+}
