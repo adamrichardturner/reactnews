@@ -10,9 +10,9 @@ import { useRouter } from 'next/router';
 
 const Navigation = () => {
     const router = useRouter();
-
+    // Store our state for the burger menu status here
     const [navActive, setNavActive] = useState(false);
-
+    // Flips boolean value of navActive status on click
     const handleClick = () => {
         setNavActive(current => !current);
     }
