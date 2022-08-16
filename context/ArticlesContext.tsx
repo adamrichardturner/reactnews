@@ -1,14 +1,15 @@
 import { createContext, useContext, ReactNode, useState } from "react";
-import NewsAPI  from '../utils/NewsAPI';
 
 type ArticlesContextType = {
     topic: string;
     articles: object;
+    updateArticles: (articles: object) => object;
 };
 
 const ArticlesContextDefaultValues: ArticlesContextType = {
     topic: 'Any',
-    articles: []
+    articles: [],
+    updateArticles: () => []
 };
 
 const ArticlesContext = createContext<ArticlesContextType>(ArticlesContextDefaultValues);
@@ -25,28 +26,19 @@ export function ArticlesProvider({ children }: Props) {
     const [topic, setTopic] = useState<string>('Any');
     const [articles, setArticles] = useState<object>([]);
 
-    const changeTopic = (topic:string) => {
+    const changeTopic = (topic: string) => {
         setTopic(topic);
     }
 
-    const getArticles = async (topic: string, country: string = 'any') => {
-        if(topic === 'Any' && country === 'Any') {
-            const articles = await NewsAPI.getWorldNews(); 
-            setArticles(articles);
-        } else if (topic !== 'Any' && country === 'Any') {
-            const articles = await NewsAPI.getTopicNews(topic);
-            setArticles(articles);
-        } else {
-            const articles = await NewsAPI.getUKNews();
-            setArticles(articles);
-        }
+    const updateArticles = async (articles: object) => {
+        setArticles(articles);
     }
 
     const value = {
         articles,
         topic,
         changeTopic,
-        getArticles
+        updateArticles
     };
 
     return (
