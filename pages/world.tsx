@@ -26,7 +26,7 @@ const World: NextPage = () => {
       </Head>
 
       <main>
-        <NewsGrid />
+        <NewsGrid articles={articles}/>
       </main>
     </div>
   )
