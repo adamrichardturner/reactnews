@@ -1,21 +1,22 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
 import { useArticles } from '../context/ArticlesContext'
 import { useEffect } from 'react'
 import NewsAPI from '../utils/NewsAPI'
+import NewsGrid from '../components/NewsGrid/NewsGrid'
 
 const World: NextPage = () => {
   const { articles, updateArticles } = useArticles();
+
   useEffect(() => {
     const fetchArticles = async () => {
       const fetchedArticles = await NewsAPI.getWorldNews();
-      updateArticles(fetchedArticles);
-      console.log(articles);
+      updateArticles(fetchedArticles.data.articles.articles);
+      console.log(articles)
     }
     fetchArticles();
-  }, [])
+  }, []);
+
   return (
     <div>
       <Head>
@@ -25,7 +26,7 @@ const World: NextPage = () => {
       </Head>
 
       <main>
-          <h2>Hello World News!</h2>
+        <NewsGrid />
       </main>
     </div>
   )
