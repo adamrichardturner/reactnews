@@ -1,9 +1,5 @@
 import axios from "axios";
 
-type Data = {
-    data: object;
-}
-
 export default async function serverArticles(req, res) {
   const {endpoint='top-headlines', topic='breaking-news', country='Any'} = req.query;
   const baseUrl = 'https://gnews.io/api/v4/';
