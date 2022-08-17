@@ -1,24 +1,19 @@
 import styles from '../../styles/NewsCard.module.scss';
-import Image from 'next/image';
-import testImage from './test.jpeg';
 import { useArticles } from '../../context/ArticlesContext'
 
-const NewsHero: React.FC = (articles) => {
-    console.log(`articles in newshero: ${articles}`)
+const NewsHero: React.FC = ({image, title}) => {
     return(
         <>
           <article className={styles.newsHero}>
               <div className={styles.newsHero__imageContainer}>
-                  {/* <Image 
-                    src={image}
-                    alt={title}
-                    layout="fill"
-                  /> */}
+                  <picture>
+                      <img src={image} alt={title} />
+                  </picture>
               </div>
               <div className={styles.newsHero__contentContainer}>
-                  {/* <h4>${articles[0].title}</h4>
-                  <p>${articles[0].content}</p> */}
-                  {/* <p><span>Source:</span> ${source}</p> */}
+                  <h4>{title}</h4>
+                  <p></p>
+                  <p><span>Source:</span></p>
               </div>
           </article>
         </>

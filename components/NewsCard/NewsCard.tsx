@@ -1,6 +1,5 @@
 import { INewsCard } from '../../types/INewsCard';
 import styles from '../../styles/NewsCard.module.scss';
-import Image from 'next/image';
 import testImage from './test.jpeg';
 
 type Props = {
@@ -12,10 +11,9 @@ const NewsCard: React.FC<Props> = ({article}) => {
         <>
           <article className={styles.newsCard}>
               <div className={styles.newsCard__imageContainer}>
-                  <Image 
-                    src={testImage}
-                    alt="Title for Article"
-                  />
+                  <picture>
+                      <img src={article.image} alt={article.title}/>
+                  </picture>
               </div>
               <div className={styles.newsCard__contentContainer}>
                   <h4>Article Title</h4>

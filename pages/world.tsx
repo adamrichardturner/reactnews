@@ -11,7 +11,8 @@ const World: NextPage = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       const fetchedArticles = await NewsAPI.getWorldNews();
-      updateArticles(fetchedArticles.data.articles.articles);
+      console.log(fetchedArticles)
+      updateArticles(fetchedArticles.data.articles);
       console.log(articles)
     }
     fetchArticles();
@@ -26,7 +27,7 @@ const World: NextPage = () => {
       </Head>
 
       <main>
-        <NewsGrid articles={articles}/>
+        <NewsGrid />
       </main>
     </div>
   )

@@ -2,13 +2,13 @@ import { createContext, useContext, ReactNode, useState } from "react";
 
 type ArticlesContextType = {
     topic: string;
-    articles: {};
+    articles: object;
     updateArticles: (articles: object) => object;
 };
 
 const ArticlesContextDefaultValues: ArticlesContextType = {
-    topic: '',
-    articles: {},
+    topic: 'Any',
+    articles: [],
     updateArticles: () => []
 };
 
@@ -23,8 +23,8 @@ type Props = {
 };
 
 export function ArticlesProvider({ children }: Props) {
-    const [topic, setTopic] = useState<string>('');
-    const [articles, setArticles] = useState<object>({});
+    const [topic, setTopic] = useState<string>('Any');
+    const [articles, setArticles] = useState<object>([]);
 
     const changeTopic = (topic: string) => {
         setTopic(topic);
