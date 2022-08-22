@@ -6,14 +6,12 @@ import NewsAPI from '../utils/NewsAPI'
 import NewsGrid from '../components/NewsGrid/NewsGrid'
 
 const World: NextPage = () => {
-  const { articles, updateArticles } = useArticles();
+  const { updateArticles } = useArticles();
 
   useEffect(() => {
     const fetchArticles = async () => {
       const fetchedArticles = await NewsAPI.getWorldNews();
-      console.log(fetchedArticles)
-      updateArticles(fetchedArticles.data.articles);
-      console.log(articles)
+      updateArticles(fetchedArticles);
     }
     fetchArticles();
   }, []);
