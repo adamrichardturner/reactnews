@@ -24,7 +24,7 @@ type Props = {
 
 export function ArticlesProvider({ children }: Props) {
     const [topic, setTopic] = useState<string>('Any');
-    const [articles, setArticles] = useState<object>([]);
+    const [articles, setArticles] = useState<object>({});
 
     const changeTopic = (topic: string) => {
         setTopic(topic);

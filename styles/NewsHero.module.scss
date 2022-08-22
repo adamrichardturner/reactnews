@@ -1,4 +1,5 @@
 .newsHero {
+    margin-top: 40px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 100%;
@@ -6,8 +7,10 @@
         img {
             border-radius: 5px 5px 0 0;
             width: 100%;
-            padding-top: 40px;
         }
+    }
+    &__contentContainer {
+        padding: 0px 20px;
     }
 }
 

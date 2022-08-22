@@ -1,25 +1,31 @@
-import styles from '../../styles/NewsCard.module.scss';
-import { useArticles } from '../../context/ArticlesContext'
+import styles from '../../styles/NewsHero.module.scss';
+import { useArticles } from '../../context/ArticlesContext';
+import Loader from '../../common/loader.gif';
+import Image from "next/image";
 
-const NewsHero: React.FC = () => {
-    const { articles } = useArticles();
-    const image = articles.data.articles[0].image;
-    const title = articles.data.articles[0].title;
-    const description = articles.data.articles[0].description;
+const NewsHero: React.FC = ({articles}) => {
+    const hero = articles.articles.articles[0];
     return(
         <>
+        {!hero ? <Image 
+                    src={Loader}
+                    alt="Loading"
+                    height={22}
+                    width={22}
+                /> :
           <article className={styles.newsHero}>
               <div className={styles.newsHero__imageContainer}>
                   <picture>
-                      <img src={image} alt={title} />
+                      <img src={hero.image} alt={hero.title} />
                   </picture>
               </div>
               <div className={styles.newsHero__contentContainer}>
-                  <h4>{title}</h4>
-                  <p>{description}</p>
+                  <h4>{hero.title}</h4>
+                  <p>{hero.description}</p>
                   <p><span>Source:</span></p>
               </div>
           </article>
+           }
         </>
     )
 }

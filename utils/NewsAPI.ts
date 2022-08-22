@@ -3,9 +3,9 @@ import axios from "axios"
 const NewsAPI: { getWorldNews: Function, getUKNews: Function, getTopicNews: Function } = {
     async getWorldNews() {
         try {
-            const response = await axios.get('/api/serverArticles');
+            const response = await axios.get('/api:3000/serverArticles');
+            console.log(response)
             if(response) {
-                console.log(response.data)
                 return response.data;
             }
         } catch(error) {

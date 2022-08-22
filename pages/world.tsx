@@ -1,21 +1,13 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useArticles } from '../context/ArticlesContext'
+import { useArticles, updateArticles } from '../context/ArticlesContext'
 import { useEffect } from 'react'
 import NewsAPI from '../utils/NewsAPI'
 import NewsGrid from '../components/NewsGrid/NewsGrid'
+import axios from 'axios'
 
-const World: NextPage = () => {
-  const { updateArticles } = useArticles();
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      const fetchedArticles = await NewsAPI.getWorldNews();
-      updateArticles(fetchedArticles);
-    }
-    fetchArticles();
-  }, []);
-
+const World: NextPage = ({articles}) => {
+  console.log(articles)
   return (
     <div>
       <Head>
@@ -25,10 +17,21 @@ const World: NextPage = () => {
       </Head>
 
       <main>
-        <NewsGrid />
+        <NewsGrid articles={articles}/>
       </main>
     </div>
   )
 }
 
-export default World
+export const getServerSideProps = async () => { 
+  const endpoint='top-headlines', topic='breaking-news'
+  const baseUrl = 'https://gnews.io/api/v4/';
+  const key = process.env.GNEWS_API_KEY;
+  const res = await fetch(`${baseUrl}${endpoint}?token=${key}&lang=en&topic=${topic}`);
+  const articles = await res.json();
+  return {
+    props: {articles}
+  }
+};
+
+export default World;

@@ -4,12 +4,11 @@ import NewsHero from '../NewsHero/NewsHero';
 import NewsCard from "../NewsCard/NewsCard";
 import { useArticles } from '../../context/ArticlesContext'
 
-const NewsGrid: React.FC = () => {
-    const { articles } = useArticles();
+const NewsGrid: React.FC = (articles) => {
     return(
         <div className={styles.newsContainer}>
             <div className={styles.newsContainer__heroContainer}>
-                <NewsHero />
+                <NewsHero articles={articles}/>
             </div>
             <div className={styles.newsContainer__newsGrid}>
                 
