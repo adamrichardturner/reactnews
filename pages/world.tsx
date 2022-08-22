@@ -1,13 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { useArticles, updateArticles } from '../context/ArticlesContext'
-import { useEffect } from 'react'
-import NewsAPI from '../utils/NewsAPI'
 import NewsGrid from '../components/NewsGrid/NewsGrid'
-import axios from 'axios'
 
 const World: NextPage = ({articles}) => {
-  console.log(articles)
   return (
     <div>
       <Head>

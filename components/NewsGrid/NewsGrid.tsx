@@ -1,8 +1,6 @@
-import { INewsGrid } from '../../types/INewsGrid';
 import styles from '../../styles/NewsGrid.module.scss';
 import NewsHero from '../NewsHero/NewsHero';
 import NewsCard from "../NewsCard/NewsCard";
-import { useArticles } from '../../context/ArticlesContext'
 
 const NewsGrid: React.FC = (articles) => {
     return(

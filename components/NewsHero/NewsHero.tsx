@@ -1,5 +1,4 @@
 import styles from '../../styles/NewsHero.module.scss';
-import { useArticles } from '../../context/ArticlesContext';
 import Loader from '../../common/loader.gif';
 import Image from "next/image";
 
@@ -22,7 +21,7 @@ const NewsHero: React.FC = ({articles}) => {
               <div className={styles.newsHero__contentContainer}>
                   <h4>{hero.title}</h4>
                   <p>{hero.description}</p>
-                  <p><span>Source:</span></p>
+                  <p><span>Source:</span>{hero.source.name}</p>
               </div>
           </article>
            }
