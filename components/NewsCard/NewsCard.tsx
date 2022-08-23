@@ -2,11 +2,7 @@ import { INewsCard } from '../../types/INewsCard';
 import styles from '../../styles/NewsCard.module.scss';
 import Link from 'next/link';
 
-type Props = {
-    article: INewsCard;
-};
-
-const NewsCard: React.FC<Props> = ({article}) => {
+const NewsCard: React.FC<INewsCard> = (article) => {
     return(
         <>
             <Link href={{pathname: article.url}} passHref>
@@ -20,7 +16,7 @@ const NewsCard: React.FC<Props> = ({article}) => {
                         <div className={styles.newsCard__contentContainer}>
                             <h4>{article.title}</h4>
                             <p>{article.description}</p>
-                                <p>Source: <span>{article.source.name}</span></p>
+                                <p>Source: <span>{article.source}</span></p>
                         </div>
                     </article>
                 </a>

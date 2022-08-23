@@ -1,8 +1,8 @@
 import styles from '../../styles/NewsHero.module.scss';
 import Link from 'next/link';
 
-const NewsHero: React.FC = ({articles}) => {
-    const hero = articles.articles.articles[0];
+const NewsHero: React.FC = (article) => {
+    const hero = article;
     return(
         <>
         <Link href={{pathname: hero.url}} passHref>
