@@ -1,8 +1,10 @@
 $color-primary: #0070f3;
 $color-secondary: #F3F3F3;
+$color-tertiary: #ffffff;
 
 .header {
-    background: white;
+    z-index: 2;
+    background: var(--color-background);
     position: fixed;
     top: 0;
     width: 100vw;
@@ -11,7 +13,7 @@ $color-secondary: #F3F3F3;
     box-shadow: 0px 0px 6px 0px #000000;
     h1 {
         font-size: 1.25rem;
-        color: $color-primary;
+        color: var(--color-primary-accent);
         margin: 0 0.5rem 0 1rem;
     }
     &__logo {
@@ -26,6 +28,14 @@ $color-secondary: #F3F3F3;
         flex-direction: row;
         list-style: none;
         align-items: center;
+        &__bulb {
+            font-size: 2rem;
+            width: 20px;
+            cursor: pointer;
+        }
+        &__bulb:hover {
+            color: $color-primary;
+        }
     &__navResponsive {
         display: none;
     }
@@ -63,6 +73,10 @@ $color-secondary: #F3F3F3;
             ul {
                 display: none;
             }
+            &__bulb {
+                position: absolute;
+                right: 3.25rem;
+            }
         }
     }
 }
@@ -85,7 +99,7 @@ $color-secondary: #F3F3F3;
             flex-direction: column;
             align-items: flex-start;
             padding-left: 0;
-            background: $color-secondary;
+            background: var(--color-background);
             width: 100vw;
             margin: 0;
             li {
@@ -96,6 +110,9 @@ $color-secondary: #F3F3F3;
             }
             li:hover {
                 background: #d3d3d3;
+            }
+            &__bulb {
+                top: 13px;
             }
         }
     }

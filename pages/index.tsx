@@ -22,9 +22,15 @@ const Home: NextPage = () => {
           </div>
         </section>
         <section className={styles.container__main__info}>
+          <video autoPlay muted loop>
+            <source src="/reactnews.mp4" type="video/mp4"/>
+          </video>
           <h2 className={styles.container__main__info__title}>
             Sourced from over 60,000 news outlets...
           </h2>
+          <p>ReactNews features headlines and content from sources all over the world.<br />
+            Simply view articles and click on an individual article to view the full original source.
+          </p>
           <Link href="/world">
             <button className={styles.container__main__info__button}>Get Started</button>
           </Link>

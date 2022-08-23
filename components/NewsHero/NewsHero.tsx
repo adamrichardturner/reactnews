@@ -1,6 +1,7 @@
 import styles from '../../styles/NewsHero.module.scss';
 import Loader from '../../common/loader.gif';
 import Image from "next/image";
+import Link from 'next/link';
 
 const NewsHero: React.FC = ({articles}) => {
     const hero = articles.articles.articles[0];
@@ -12,18 +13,22 @@ const NewsHero: React.FC = ({articles}) => {
                     height={22}
                     width={22}
                 /> :
-          <article className={styles.newsHero}>
-              <div className={styles.newsHero__imageContainer}>
-                  <picture>
-                      <img src={hero.image} alt={hero.title} />
-                  </picture>
-              </div>
-              <div className={styles.newsHero__contentContainer}>
-                  <h4>{hero.title}</h4>
-                  <p>{hero.description}</p>
-                  <p><span>Source:</span>{hero.source.name}</p>
-              </div>
-          </article>
+        <Link href={{pathname: hero.url}} passHref>
+            <a target="_blank" rel="noreferrer">
+                <article className={styles.newsHero}>
+                    <div className={styles.newsHero__imageContainer}>
+                        <picture>
+                            <img src={hero.image} alt={hero.title} />
+                        </picture>
+                    </div>
+                    <div className={styles.newsHero__contentContainer}>
+                        <h4>{hero.title}</h4>
+                        <p>{hero.description}</p>
+                        <p>Source: <span>{hero.source.name}</span></p>
+                    </div>
+                </article>
+            </a>
+          </Link>
            }
         </>
     )

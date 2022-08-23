@@ -2,14 +2,51 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: 100%;
+    min-height: 120px;
+    height: 500px;
+    display: flex;
+    flex: 1 0 180px;
+    flex-flow: column;
+    background: var(--color-paragraph);
+    cursor: pointer;
     &__imageContainer {
+        width: 100%;
         img {
             border-radius: 5px 5px 0 0;
             width: 100%;
+            height: 172px;
+            object-fit: cover;
+        }
+    }
+    &__contentContainer {
+        padding: 0px 20px 20px 20px;
+        flex: 1;
+        position: relative;
+        p:last-child {
+            position: absolute;
+            bottom: 0;
+        }
+        span {
+            font-weight: 800;
         }
     }
 }
 
 .newsCard:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 767px) {
+    .newsCard {
+        height: 460px;
+        &__contentContainer {
+            padding: 0 5px 5px 5px;
+            h4 {
+                font-size: 0.85rem;
+            }
+            p {
+                font-size: 0.75rem;
+            }
+        }
+    }
 }
