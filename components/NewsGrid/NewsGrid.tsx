@@ -1,10 +1,17 @@
 import styles from '../../styles/NewsGrid.module.scss';
 import NewsHero from '../NewsHero/NewsHero';
 import NewsCard from "../NewsCard/NewsCard";
+import { INewsGrid, IArticle } from '../../types/INewsGrid';
 
-const NewsGrid: React.FC = (articles) => {
-    const newsGrid = [];
-    Object.values(articles.articles.articles).forEach((article) => newsGrid.push(article));
+type Props = {
+    article: IArticle;
+    articles: INewsGrid;
+};
+
+const NewsGrid: React.FC<Props> = (articles) => {
+    const { articles: data } = articles;
+    const newsGrid: Array<object> = [];
+    Object.values(data.articles).forEach((article) => newsGrid.push(article));
     newsGrid.shift();
     return(
         <div className={styles.newsContainer}>

@@ -1,6 +1,12 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import NewsGrid from '../components/NewsGrid/NewsGrid'
+import { INewsGrid, IArticle } from '../types/INewsGrid'
+
+type Props = {
+  articles: INewsGrid;
+  article: IArticle;
+}
 
 const World: NextPage = ({articles}) => {
   return (
@@ -19,14 +25,14 @@ const World: NextPage = ({articles}) => {
 }
 
 export const getServerSideProps = async () => { 
-  const endpoint='top-headlines', topic='breaking-news'
+  const endpoint='top-headlines', topic='breaking-news';
   const baseUrl = 'https://gnews.io/api/v4/';
   const key = process.env.GNEWS_API_KEY;
   const res = await fetch(`${baseUrl}${endpoint}?token=${key}&lang=en&topic=${topic}`);
   const articles = await res.json();
   return {
     props: {articles}
-  }
+  };
 };
 
 export default World;

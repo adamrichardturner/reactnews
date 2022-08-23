@@ -15,13 +15,13 @@ const Navigation = () => {
 
     // State for burger menu
     const [navActive, setNavActive] = useState(false);
-
+    // State for dark theme
     const [darkTheme, setDarkTheme] = useState(false);
-
+    // Flips dark mode value
     const handleToggle = () => {
         setDarkTheme(current => !current);
     };
-
+    // Handles navigation active status
     const handleClick = () => {
         setNavActive(current => !current);
     }
@@ -29,7 +29,7 @@ const Navigation = () => {
     useEffect(() => {
         if (darkTheme !== undefined) {
           if (darkTheme) {
-            // Set value of  darkmode to dark
+            // Set value of darkmode to dark
             document.documentElement.setAttribute('data-theme', 'dark');
             window.localStorage.setItem('theme', 'dark');
           } else {
@@ -45,7 +45,7 @@ const Navigation = () => {
         const initialColorValue = root.style.getPropertyValue(
           '--initial-color-mode'
         );
-        // Set initial darkmode to light
+        // Set initial darkmode to dark
         setDarkTheme(initialColorValue === 'dark');
       }, []);
 

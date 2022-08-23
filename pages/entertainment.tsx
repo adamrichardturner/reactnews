@@ -1,9 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import NewsGrid from '../components/NewsGrid/NewsGrid'
 
-const Entertainment: NextPage = () => {
+const Entertainment: NextPage = ({articles}) => {
   return (
     <div>
       <Head>
@@ -13,10 +12,21 @@ const Entertainment: NextPage = () => {
       </Head>
 
       <main>
-          <h2>Hi Entertainment</h2>
+        <NewsGrid articles={articles} />
       </main>
     </div>
   )
 }
 
-export default Entertainment
+export const getServerSideProps = async () => { 
+  const endpoint='top-headlines', topic='entertainment'
+  const baseUrl = 'https://gnews.io/api/v4/';
+  const key = process.env.GNEWS_API_KEY;
+  const res = await fetch(`${baseUrl}${endpoint}?token=${key}&lang=en&topic=${topic}`);
+  const articles = await res.json();
+  return {
+    props: {articles}
+  };
+};
+
+export default Entertainment;

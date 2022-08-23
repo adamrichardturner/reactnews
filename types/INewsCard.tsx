@@ -3,5 +3,9 @@ export interface INewsCard {
     description: string;
     content: string;
     image: string;
-    source: string;
+    url: string;
+    name: string;
+    source: {
+        name: string;
+    }
 }

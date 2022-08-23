@@ -2,21 +2,9 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useArticles } from '../context/ArticlesContext'
-import { useEffect } from 'react'
-import NewsAPI from '../utils/NewsAPI'
+import NewsGrid from '../components/NewsGrid/NewsGrid'
 
-const UK: NextPage = () => {
-  const { articles, updateArticles } = useArticles();
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      const fetchedArticles = await NewsAPI.getUKNews();
-      updateArticles(fetchedArticles);
-      console.log(articles);
-    }
-    fetchArticles();
-  }, [])
+const UK: NextPage = ({articles}) => {
   return (
     <div>
       <Head>
@@ -26,10 +14,21 @@ const UK: NextPage = () => {
       </Head>
 
       <main>
-          <h2>Hi UK</h2>
+        <NewsGrid articles={articles} />
       </main>
     </div>
   )
-}
+};
 
-export default UK
+export const getServerSideProps = async () => { 
+  const endpoint='top-headlines', topic='breaking-news', country='gb'
+  const baseUrl = 'https://gnews.io/api/v4/';
+  const key = process.env.GNEWS_API_KEY;
+  const res = await fetch(`${baseUrl}${endpoint}?token=${key}&lang=en&topic=${topic}&country=${country}`);
+  const articles = await res.json();
+  return {
+    props: {articles}
+  };
+};
+
+export default UK;
