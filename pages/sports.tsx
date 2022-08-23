@@ -25,10 +25,12 @@ const Sports: NextPage<IArticlesProps> = ({articles}) => {
           property="og:image"
           content="/reactsocial.jpg"
         />
-        <meta
-          name="twitter:card"
-          content="summary_large_image"
-        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@csturner88" />
+        <meta name="twitter:creator" content="@csturner88" />
+        <meta name="twitter:title" content="ReactNews | Sports" />
+        <meta name="twitter:description" content="ReactNews features articles from over 60,000 global vendors." />
+        <meta name="twitter:image" content="/reactsocial.jpg" />
       </Head>
 
       <main>

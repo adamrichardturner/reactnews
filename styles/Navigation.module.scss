@@ -101,10 +101,14 @@ $color-primary: #0070f3;
             width: 100vw;
             margin: 0;
             li {
-                line-height: 1.8;
+                border-bottom: 1px solid var(--color-primary-accent);
+                line-height: 2.8;
                 a {
                     padding-left: 1rem;
                 }
+            }
+            li:first-child {
+                border-top: 1px solid var(--color-primary-accent);
             }
             li:hover {
                 background: #d3d3d3;

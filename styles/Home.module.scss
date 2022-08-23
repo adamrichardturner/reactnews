@@ -79,11 +79,12 @@
   .container {
     &__main {
       &__info {
-        height: 80vh;
+        height: auto;
         padding: 0;
         align-items: flex-start;
         video {
-          width: 100vw;
+          width: 75vw;
+          margin: 50px auto 0px auto;
         }
         &__title {
           padding: 0 1rem;
@@ -93,7 +94,7 @@
           text-align: left;
         }
         &__button {
-          margin: 0 auto;
+          margin: 0 auto 50px auto;
         }
       }
     }

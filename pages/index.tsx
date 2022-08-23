@@ -25,10 +25,12 @@ const Home: NextPage = () => {
           property="og:image"
           content="/reactsocial.jpg"
         />
-        <meta
-          name="twitter:card"
-          content="summary_large_image"
-        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@csturner88" />
+        <meta name="twitter:creator" content="@csturner88" />
+        <meta name="twitter:title" content="ReactNews | Worldwide and UK based News from thousands of sources" />
+        <meta name="twitter:description" content="ReactNews features articles from over 60,000 global vendors." />
+        <meta name="twitter:image" content="/reactsocial.jpg" />
       </Head>
 
       <main className={styles.container__main}>
@@ -40,7 +42,7 @@ const Home: NextPage = () => {
           </div>
         </section>
         <section className={styles.container__main__info}>
-          <video autoPlay muted loop>
+          <video autoPlay muted loop playsInline>
             <source src="/reactnews.mp4" type="video/mp4"/>
           </video>
           <h2 className={styles.container__main__info__title}>
