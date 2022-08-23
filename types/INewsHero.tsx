@@ -1,4 +1,4 @@
-export interface INewsCard {
+export interface INewsHero {
     title: string;
     image: string;
     description: string;

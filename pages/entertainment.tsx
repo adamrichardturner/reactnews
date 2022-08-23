@@ -1,8 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import NewsGrid from '../components/NewsGrid/NewsGrid'
+import { IArticlesProps } from '../types/IArticlesProps';
 
-const Entertainment: NextPage = ({articles}) => {
+const Entertainment: NextPage<IArticlesProps> = ({articles}) => {
   return (
     <div>
       <Head>

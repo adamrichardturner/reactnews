@@ -32,7 +32,7 @@ const World: NextPage<IArticlesProps> = ({articles}) => {
       </Head>
 
       <main>
-        <NewsGrid articles={articles}/>
+        <NewsGrid articles={articles} />
       </main>
     </div>
   )

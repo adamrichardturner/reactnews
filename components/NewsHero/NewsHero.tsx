@@ -1,22 +1,22 @@
 import styles from '../../styles/NewsHero.module.scss';
 import Link from 'next/link';
+import { INewsHero } from '../../types/INewsHero';
 
-const NewsHero: React.FC = (article) => {
-    const hero = article;
+const NewsHero: React.FC<INewsHero> = ({title, image, description, url, source}) => {
     return(
         <>
-        <Link href={{pathname: hero.url}} passHref>
+        <Link href={{pathname: url}} passHref>
             <a target="_blank" rel="noreferrer">
                 <article className={styles.newsHero}>
                     <div className={styles.newsHero__imageContainer}>
                         <picture>
-                            <img src={hero.image} alt={hero.title} />
+                            <img src={image} alt={title} />
                         </picture>
                     </div>
                     <div className={styles.newsHero__contentContainer}>
-                        <h4>{hero.title}</h4>
-                        <p>{hero.description}</p>
-                        <p>Source: <span>{hero.source.name}</span></p>
+                        <h4>{title}</h4>
+                        <p>{description}</p>
+                        <p>Source: <span>{source}</span></p>
                     </div>
                 </article>
             </a>
