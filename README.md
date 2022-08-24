@@ -28,10 +28,9 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Work in Progress
+## Future Enhancements
 
-- This app is WIP and should only be tested in development environments.
-- There are several TypeScript compile time errors which need rectifying.
-- The demo is currently hosted for testing purposes in a Ubuntu / Nginx environment.
+- Individual page view - it would be useful to allow users to read more content before visiting the news source.
+- Unit and Integration Testing
