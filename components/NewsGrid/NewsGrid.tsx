@@ -15,7 +15,7 @@ const NewsGrid: React.FC<IArticlesProps> = ({articles}: IArticlesProps) => {
                     image={article.image}
                     description={article.description}
                     source={article.source.name}
-                    url={article.source.url}
+                    url={article.url}
                 />
             </div>
             <div className={styles.newsContainer__newsGrid}>
@@ -26,7 +26,7 @@ const NewsGrid: React.FC<IArticlesProps> = ({articles}: IArticlesProps) => {
                              image={article.image}
                              description={article.description}
                              source={article.source.name}
-                             url={article.source.url}
+                             url={article.url}
                             />
                 })}
             </div>
