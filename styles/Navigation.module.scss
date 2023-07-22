@@ -1,49 +1,47 @@
 $color-primary: #0070f3;
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
 .header {
-    z-index: 2;
-    background: var(--color-background);
-    position: fixed;
-    top: 0;
-    width: 100vw;
+    background: var(--color-navigation);
     display: flex;
     align-items: center;
-    box-shadow: 0px 0px 6px 0px #000000;
+    justify-content: center;
     h1 {
         font-size: 1.25rem;
         color: var(--color-primary-accent);
-        margin: 0 0.5rem 0 1rem;
-    }
-    &__logo {
-        margin: 1rem 0;
-        display: flex;
-        align-items: center;
+        margin-right: 5px;
         cursor: pointer;
     }
-    &__nav {
+    img {
+        cursor: pointer;
+    }
+    &__logo {
         display: flex;
-        justify-content: center;
+        flex: none;
+    }
+    &__nav {
+        width: 1000px;
+        display: flex;
+        justify-content: flex-start;
         flex-direction: row;
         list-style: none;
         align-items: center;
         &__bulb {
-            font-size: 2rem;
-            width: 20px;
+            width: 30px;
             cursor: pointer;
-        }
-        &__bulb:hover {
-            color: $color-primary;
         }
     &__navResponsive {
         display: none;
     }
         li {
             a {
-                padding-right: 1.25rem;
+                margin-right: 1.25rem;
                 font-weight: 600;
-            }
-            a:hover {
-                color: $color-primary;
+                color: var(--color-primary-accent);
             }
         }
         li:hover {
@@ -51,29 +49,46 @@ $color-primary: #0070f3;
             cursor: pointer;
         }
     }
-    &__icon {
-        display: none;
-        font-size: 1.25rem;
-        color: $color-primary;
-        cursor: pointer;
-        width: 20px;
-        margin-right: 1rem;
-    }
-    @media screen and (max-width: 865px) {
-        &__icon {
-            display: block;
-            position: absolute;
+    &__icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__flame {
+            font-size: 1.25rem;
+            color: var($color-primary);
+            cursor: pointer;
             width: 20px;
-            right: 5px;
-            top: 1rem;
         }
-        &__nav {
-            ul {
-                display: none;
+        &__toggle {
+            color: #fff !important;
+        }
+        @media screen and (max-width: 1100px) {
+            &__toggle {
+                    display: block;
+                    width: 26px;
+                    margin-right: 1.25rem;
+                    margin-left: 1rem;
             }
-            &__bulb {
-                position: absolute;
-                right: 3.25rem;
+        }
+    }
+    
+}
+
+@media only screen and (max-width: 1100px) {
+    .header {
+        &__nav {
+            justify-content: space-between;
+            width: 100%;
+        }
+        h1 {
+            padding-left: 1.25rem;
+        }
+    }
+    .headerSpacer {
+        &__pageTitle {
+            width: 100%;
+            h2 {
+                margin-right: 1.25rem;
             }
         }
     }
@@ -81,40 +96,55 @@ $color-primary: #0070f3;
 
 .active {
     color: $color-primary;
+    border-bottom: 2px solid white;
 }
 
 .headerSpacer {
-    margin-bottom: 47.6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__pageTitle {
+        width: 1000px;
+        h2 {
+            text-align: right;
+            margin-bottom: 0;
+            font-family: var(--font-inter);
+        }
+    }
 }
 
-@media screen and (max-width: 865px) {
+
+
+
+@media screen and (max-width: 1100px) {
+    .header {
+        &__nav {
+            display: flex;
+            justify-content: space-between;
+            ul {
+                display: none;
+            }
+        }
+    }
     .headerResponsive {
-        flex-direction: column;
-        align-items: flex-start;
         &__navResponsive {
-            position: relative;
+            position: absolute;
+            top: 55px;
             display: block !important;
-            flex-direction: column;
-            align-items: flex-start;
             padding-left: 0;
-            background: var(--color-background);
+            background: var(--color-button);
             width: 100vw;
             margin: 0;
+            animation: fadeIn 0.25s;
             li {
                 border-bottom: 1px solid var(--color-primary-accent);
                 line-height: 2.8;
                 a {
-                    padding-left: 1rem;
+                    margin-left: 1rem;
                 }
             }
             li:first-child {
                 border-top: 1px solid var(--color-primary-accent);
-            }
-            li:hover {
-                background: #d3d3d3;
-            }
-            &__bulb {
-                top: 13px;
             }
         }
     }

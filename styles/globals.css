@@ -7,19 +7,20 @@ body {
 }
 
 :root {
-  --color-primary-accent: #0070f3;
+  --color-primary-accent: #fff;
   --color-primary: #000;
   --color-button: #3d486c;
   --color-paragraph: #fff;
   --color-button-text: rgb(255, 255, 255);
   --color-background: #fff;
+  --color-navigation: #3b43f2;
   --color-anchor: #000aff;
 }
 
 [data-theme='dark'] {
   --color-primary-accent: #fff;
   --color-primary: #fff;
-  --color-button: #00ff4c;
+  --color-button: #3d486c;
   --color-paragraph: #404040;
   --color-button-text: rgb(0, 0, 0);
   --color-background: #121212;
@@ -51,4 +52,18 @@ main {
 
 .active {
   color: #0070f3;
+  border-bottom: 2px solid white;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #3b43f2;
+  color: #fff;
+  text-align: center;
+}
+
+.footer a {
+  font-weight: 600;
 }

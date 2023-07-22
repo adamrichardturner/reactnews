@@ -12,14 +12,25 @@
     }
     &__contentContainer {
         padding: 0px 20px 20px 20px;
+        position: relative;
+        min-height: 300px;
         h4 {
-            font-size: 1.5rem;
+            font-size: 3rem;
+            margin-bottom: 0;
         }
         p {
             font-size: 1.25rem;
         }
-        span {
-            font-weight: 800;
+        &__badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            margin-bottom: 5px;
+            box-shadow: 0 10px 16px 0 rgba(1,1,1,.1), 0 6px 20px 0 rgba(0,0,0,.01);
+            background: var(--color-navigation);;
+            color: var(--color-primary-accent);
+            padding: 8px 6px;
+            border-radius: 3px;
         }
     }
 }
