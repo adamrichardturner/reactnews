@@ -43,16 +43,19 @@ const UK: NextPage<IArticlesProps> = ({ articles }) => {
           content='https://reactnews.app/reactnews-social.png'
         />
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:site' content='@csturner88' />
-        <meta name='twitter:creator' content='@csturner88' />
-        <meta name='twitter:title' content='React News | UK' />
+        <meta property='twitter:domain' content='reactnews.app' />
+        <meta property='twitter:url' content='https://reactnews.app/' />
+        <meta
+          name='twitter:title'
+          content='React News | International news from over 50,000 Vendors'
+        />
         <meta
           name='twitter:description'
-          content='React News features international articles from over 60,000 global vendors.'
+          content='React News | International news aggregated from over 50,000 Vendors'
         />
         <meta
           name='twitter:image'
-          content='https://reactnews.app/reactnews-social.png'
+          content='https://adamrichardturner.dev/adamturner-social.png'
         />
       </Head>
 
@@ -66,7 +69,7 @@ export const getServerSideProps = async () => {
     topic = 'breaking-news',
     country = 'gb'
   const baseUrl = 'https://gnews.io/api/v4/'
-  const key = process.env.GNEWS_API_KEY
+  const key = process.env.GNEWS_API
   const res = await fetch(
     `${baseUrl}${endpoint}?token=${key}&lang=en&topic=${topic}&country=${country}`
   )
