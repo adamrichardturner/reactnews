@@ -66,81 +66,87 @@ const Navigation = () => {
             navActive ? styles.header__navResponsive : ''
           }`}
         >
-          <Link href='/'>
-            <div className={styles.header__logo}>
-              <h1>ReactNews</h1>
-              <Image src={Logo} alt='React News Logo' width={30} height={30} />
-            </div>
-          </Link>
-          <ul
-            className={`${styles.header__nav} ${
-              navActive ? styles.headerResponsive__navResponsive : ''
-            }`}
-          >
+          <div className={styles.header__nav__linksWrapper}>
             <Link href='/'>
-              <li onClick={handleClick}>
-                <a className={router.pathname == '/' ? styles.active : ''}>
+              <div className={styles.header__nav__linksWrapper__logo}>
+                <h1>ReactNews</h1>
+                <Image
+                  src={Logo}
+                  alt='React News Logo'
+                  width={30}
+                  height={30}
+                />
+              </div>
+            </Link>
+            <ul
+              className={`${styles.header__nav__linksWrapper__links} ${
+                navActive ? styles.headerResponsive__navResponsive : ''
+              }`}
+            >
+              <Link href='/' passHref>
+                <li
+                  className={router.pathname == '/' ? styles.active : ''}
+                  onClick={handleClick}
+                >
                   World
-                </a>
-              </li>
-            </Link>
-            <Link href='/uk'>
-              <li onClick={handleClick}>
-                <a className={router.pathname == '/uk' ? styles.active : ''}>
+                </li>
+              </Link>
+              <Link href='/uk' passHref>
+                <li
+                  className={router.pathname == '/uk' ? styles.active : ''}
+                  onClick={handleClick}
+                >
                   United Kingdom
-                </a>
-              </li>
-            </Link>
-            <Link href='/entertainment'>
-              <li onClick={handleClick}>
-                <a
+                </li>
+              </Link>
+              <Link href='/entertainment' passHref>
+                <li
                   className={
                     router.pathname == '/entertainment' ? styles.active : ''
                   }
+                  onClick={handleClick}
                 >
                   Entertainment
-                </a>
-              </li>
-            </Link>
-            <Link href='/sports'>
-              <li onClick={handleClick}>
-                <a
+                </li>
+              </Link>
+              <Link href='/sports' passHref>
+                <li
                   className={router.pathname == '/sports' ? styles.active : ''}
+                  onClick={handleClick}
                 >
                   Sports
-                </a>
-              </li>
-            </Link>
-            <Link href='/technology'>
-              <li onClick={handleClick}>
-                <a
+                </li>
+              </Link>
+              <Link href='/technology' passHref>
+                <li
                   className={
                     router.pathname == '/technology' ? styles.active : ''
                   }
+                  onClick={handleClick}
                 >
                   Technology
-                </a>
-              </li>
-            </Link>
-            <Link href='/health'>
-              <li onClick={handleClick}>
-                <a
+                </li>
+              </Link>
+              <Link href='/health' passHref>
+                <li
                   className={router.pathname == '/health' ? styles.active : ''}
+                  onClick={handleClick}
                 >
                   Health
-                </a>
-              </li>
-            </Link>
-          </ul>
-          <div className={styles.header__icons}>
-            <div className={styles.header__icons__flame}>
+                </li>
+              </Link>
+            </ul>
+          </div>
+          <div className={styles.header__nav__icons}>
+            <div className={styles.header__nav__icons__flame}>
               <Image
                 src={darkTheme ? FlameDark : FlameLight}
                 alt='Dark Mode Toggle'
                 onClick={handleToggle}
+                height={30}
               />
             </div>
-            <div className={styles.header__icons__toggle}>
+            <div className={styles.header__nav__icons__toggle}>
               <FontAwesomeIcon
                 icon={navActive ? faTimes : faBars}
                 onClick={handleClick}

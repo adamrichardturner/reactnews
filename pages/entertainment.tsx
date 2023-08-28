@@ -5,7 +5,7 @@ import { IArticlesProps } from '../types/IArticlesProps'
 
 const Entertainment: NextPage<IArticlesProps> = ({ articles }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>ReactNews | Entertainment</title>
         <meta
@@ -56,10 +56,8 @@ const Entertainment: NextPage<IArticlesProps> = ({ articles }) => {
         />
       </Head>
 
-      <main>
-        <NewsGrid articles={articles} />
-      </main>
-    </div>
+      <NewsGrid articles={articles} />
+    </>
   )
 }
 

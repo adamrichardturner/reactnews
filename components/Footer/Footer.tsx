@@ -7,7 +7,10 @@ const Footer = () => {
     <footer className='footer'>
       <p>
         Made by
-        <Link href='https://adamrichardturner.dev'> Adam Turner</Link>
+        <Link href='https://adamrichardturner.dev' passHref={true}>
+          {' '}
+          Adam Turner
+        </Link>
       </p>
     </footer>
   )

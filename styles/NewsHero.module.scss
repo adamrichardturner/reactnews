@@ -4,28 +4,58 @@
     transition: 0.3s;
     width: 100%;
     background: var(--color-paragraph);
+    padding: 1rem;
+    border-radius: 5px;
     &__imageContainer {
+            position: relative;
+            padding-top: 40.25%;
+            border-radius: 5px;
+            @media (max-width: 767px) {
+                position: static;
+                padding-top: 0;
+            }
         img {
-            border-radius: 5px 5px 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            max-height: 400px;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            -webkit-box-shadow: 1px 6px 12px -6px rgba(0,0,0,0.48);
+            -moz-box-shadow: 1px 6px 12px -6px rgba(0,0,0,0.48);
+            box-shadow: 1px 6px 12px -6px rgba(0, 0, 0, 0.48);
+            @media (max-width: 767px) {
+                position: static;
+                border-radius: 5px 5px 0 0;
+                min-height: 172px;
+                max-height: 420px;
+                object-fit: cover;
+            }
         }
     }
     &__contentContainer {
-        padding: 0px 20px 20px 20px;
         position: relative;
-        min-height: 300px;
+        min-height: 260px;
         h4 {
+            margin-top: 1rem;
             font-size: 3rem;
             margin-bottom: 0;
+            line-height: 3rem;
+            @media (max-width: 767px) {
+                font-size: 1.25rem;
+                line-height: 1;
+            }
         }
         p {
             font-size: 1.25rem;
+            margin-bottom: 2rem;
         }
         &__badge {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            margin-bottom: 5px;
+            bottom: 0px;
+            right: 0px;
             box-shadow: 0 10px 16px 0 rgba(1,1,1,.1), 0 6px 20px 0 rgba(0,0,0,.01);
             background: var(--color-navigation);;
             color: var(--color-primary-accent);
@@ -42,7 +72,6 @@
 @media screen and (max-width: 767px) {
     .newsHero {
         &__contentContainer {
-            padding: 0px 5px 20px 5px;
             h4 {
                 font-size: 1.25rem;
             }
