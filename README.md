@@ -1,26 +1,36 @@
-# ReactNews | Next.js News App
+# ReactNews | Next.js TypeScript News App
 
-ReactNews features a responsive NewsGrid of articles on a variety of topics sourced from over 60,000 news vendors. 
+ReactNews features a responsive grid of articles on a variety of topics from over 60,000 news vendors.
 
-The articles are sourced via the [GNews API](https://gnews.io/) utilising Next.js Server Side Rendering.
+The articles are sourced via the [GNews API](https://gnews.io/).
+
+This web application is written in TypeScript, with Sass styling and no external CSS frameworks.
+
+API calls are made via the Next.js [getServerSideProps](https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props) (Server-Side Rendering) function.
+
+## Preview
+
+![](preview.png)
 
 You can view a live demo of this [project here](https://reactnews.app).
 
 ## Getting Started
 
-Clone the repository and run 
+Clone the repository and run
 
-```bash 
+```bash
 npm install
 ```
 
 Visit and register at [GNews API](https://gnews.io/), verify your email address and obtain your API key.
 
-Place your API key in a .env.local file in the root directory as follows: 
+Place your API key in a .env.local file in the root directory as follows:
 
-GNEWS_API_KEY='API_KEY_HERE'
+```
+GNEWS_API='API_KEY_HERE'
+```
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
@@ -29,8 +39,3 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Future Enhancements
-
-- Individual page view - it would be useful to allow users to read more content before visiting the news source.
-- Unit and Integration Testing

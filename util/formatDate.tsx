@@ -11,7 +11,10 @@ function formatDate(isoDateStr: string): string {
   const HOUR = 60 * MINUTE
   const DAY = 24 * HOUR
 
-  if (diff < DAY) {
+  if (diff < HOUR) {
+    const minutes = Math.floor(diff / MINUTE)
+    return minutes + (minutes === 1 ? ' minute ago' : ' minutes ago')
+  } else if (diff < DAY) {
     const hours = Math.floor(diff / HOUR)
     return hours + (hours === 1 ? ' hour ago' : ' hours ago')
   } else {

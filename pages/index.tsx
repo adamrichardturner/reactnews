@@ -49,7 +49,7 @@ const World: NextPage<IArticlesProps> = ({ articles }) => {
         <meta property='twitter:url' content='https://reactnews.app/' />
         <meta
           name='twitter:title'
-          content='React News | International news from over 50,000 Vendors'
+          content='React News | International news from over 60,000 Vendors'
         />
         <meta
           name='twitter:description'
