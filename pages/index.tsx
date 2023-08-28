@@ -53,7 +53,7 @@ const World: NextPage<IArticlesProps> = ({ articles }) => {
         />
         <meta
           name='twitter:description'
-          content='React News | International news from over 50,000 Vendors'
+          content='International news articles from over 60,000 global vendors.'
         />
         <meta
           name='twitter:image'

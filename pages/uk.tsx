@@ -51,11 +51,11 @@ const UK: NextPage<IArticlesProps> = ({ articles }) => {
         />
         <meta
           name='twitter:description'
-          content='React News | International news aggregated from over 50,000 Vendors'
+          content='International news articles from over 60,000 global vendors.'
         />
         <meta
           name='twitter:image'
-          content='https://adamrichardturner.dev/adamturner-social.png'
+          content='https://reactnews.app/reactnews-social.png'
         />
       </Head>
 
