@@ -23,7 +23,8 @@ const NewsCard: React.FC<INewsCard> = ({
     e: React.SyntheticEvent<HTMLImageElement, Event>
   ) => {
     // Error handler for broken images
-    e.currentTarget.src = '../../public/fallback.png'
+    e.currentTarget.src = '/fallback.png'
+    e.currentTarget.onerror = null
   }
 
   return (
